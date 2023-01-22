@@ -1,0 +1,24 @@
+Entry:
+    _prompt: string
+    _answer: string
+    _date: string
+
+    Display(): void
+
+Journal:
+    _entries: List<Entry>
+    _file: string
+
+    Write(): void
+    Display(): void
+    Save(): void
+    Load(): void
+    Quit(): void
+
+Prompt:
+
+    _file: string
+
+    Write(): void
+    Save(): void
+    Load(): void
