@@ -39,5 +39,3 @@ public class Fraction
         return (double)_top / (double)_bottom;
     }
 }
-Footer
-© 2023 GitHub, Inc.
