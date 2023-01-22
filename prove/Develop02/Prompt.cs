@@ -9,7 +9,7 @@ public class Prompt
         "What did I learn today?",
         "How I prepared myself to receive God revelations today?",
         "What I learned from my daily choice today?",
-        "Do I have something I need to repent?"
+        "Do I have something I need to repent?",
         "Do I spend enough time with my family members today?"
         };
     }
