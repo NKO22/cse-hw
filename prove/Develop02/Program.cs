@@ -1,37 +1,39 @@
 using System;
+
 class Program
 {
-    static void Main(string[] args)
+  static void Main(string[] args)
+  {
+    bool flag = true;
+    int menuNum;
+    Journal journal = new Journal();
+    Console.WriteLine("Welcome to my personal Journal!");
+
+    do
     {
-        bool flag = true;
-        
-        Console.WriteLine("Welcome to my Daily Journal");
-        string choice = "0";
-        
-        do{
-            Console.WriteLine("\n Select one of the below choices:");
-            Console.Write("1. Write\n2. Display\n3. Load\n4. Save\n5. Quit");
-            Console.Write("What would you like to do? ");
-            Journal myJournal = new Journal();
-            Prompt myPrompts = new Prompt();
-            string _choice = Console.ReadLine();
-            switch(choice){
-                case "1":
-                    break;
-                case "2":
-                    break;
-                case "3":
-                    break;
-                case "4":
-                    break;
-                case "5":
-                    flag = false;
-                    break;
-                default:
-                    Console.WriteLine("Enter 5 to Quit or Choose from the list");
-                    break;
-        }
-        }while (flag);
-        
-    }
+      Console.WriteLine("What do you want to do today?");
+      Console.WriteLine("1 - Write");
+      Console.WriteLine("2 - Display");
+      Console.WriteLine("0 - Quit");
+      Console.Write("choose a  number: ");
+      menuNum = int.Parse(Console.ReadLine());
+
+      if (menuNum == 1)
+      {
+        journal.WriteEntry();
+      }
+      else if (menuNum == 2)
+      {
+        journal.ReadEntry();
+      }
+      else 
+      {
+        Console.WriteLine("Good bye!! The future will tell us more");
+        flag = false;
+      }
+
+    } while (flag == true);
+
+
+  }
 }

@@ -1,24 +1,27 @@
-public class Entry {
+using System;
 
-    // Prompt is the part of the entry
-    //public string _prompt; 
-
-    // User answer based on the prompt
-    //public string _answer;
-
-    // When the use make an entry with date
-
-    public string _date;
-
-    
-    public string _prompt;
-    Prompt myPrompts = new Prompt();
-    public string Prompt()
+public class Entry
+{
+  public string _userInput;
+  public DateTime _date = DateTime.Now;
+  public string _question;
+  public void DisplayEntry()
+  {
+    if (String.IsNullOrEmpty(_userInput))
     {
-        _prompt=(string.Format("{0} Prompt:{1}", _date, Prompt()));
-        Console.WriteLine(_prompt);
-        _prompt += " " + Console.ReadLine();
-        return _prompt;
+      
+      Console.WriteLine("Entry first or load my daily journal.");
+      
+
     }
-    
+    else
+    {
+
+      
+      Console.WriteLine($"{_date} - {_question}");
+      Console.WriteLine($"{_userInput}");
+      
+    }
+
+  }
 }
