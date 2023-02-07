@@ -2,8 +2,8 @@ using System;
 
 public class ListingActivity
 {
-    List<string> prompt, queries;
-    private List<string> listingQueries = new List<string>
+    List<string> prompt, questions;
+    private List<string> listingQuestions = new List<string>
     {
         "What is the feeling you had? ",
         "How did you feel at that moment? ",

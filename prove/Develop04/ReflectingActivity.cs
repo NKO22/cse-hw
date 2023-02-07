@@ -29,61 +29,64 @@ List<string> prompt, questions;
             "How can you keep this experience in mind in the future?"
         };
     }
+     private void setActivityName(string v)
+    {
+        throw new NotImplementedException();
+    }
+
+    private void setDescription(string v)
+    {
+        throw new NotImplementedException();
+    }
 
     public void runActivity()
     {
         runActivityParentStart();
         displayPrompt();
+        displayCountDown(5);
+        Console.Clear();
         displayQuestions();
         runActivityParentEnd();
     }
+
+    private void runActivityParentStart()
+    {
+        throw new NotImplementedException();
+    }
+
     public void displayPrompt()
     {
-        
         Console.Clear();
-        Console.WriteLine("Consider the following");
+        Console.WriteLine("Consider the following: ");
         Console.WriteLine();
 
         int randomIndex = new Random().Next(0, prompt.Count());
         Console.WriteLine(prompt[randomIndex]);
         Console.WriteLine();
 
-        Console.WriteLine("When you have something in mind, press enter to continue.");
+        Console.WriteLine("Do you thinking somewhat in mind, then press enter to continue");
         Console.ReadLine();
 
-        Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        displayCountDown(5);
-
-        Console.Clear();
-        displayQuestions();
-
-
-        Console.WriteLine();
-        Console.WriteLine("Well done!!!");
-        displaySpinner(3);
-        
+        Console.WriteLine("Ponder now on the following queries as they related to your experience");
     }
 
-    public void displayQuestions()
+    public void displayCountDown(int numSecondsToRun)
+    {
+        for (int i = 1; i <= numSecondsToRun; i++)
+        {
+            Console.Write(string.Format("You can start now: {0}", i));
+            Console.SetCursorPosition(0, Console.CursorTop);
+            Thread.Sleep(1000);
+        }
+    }
+
+    public void displayQueries()
     {
         List<int> indexes = new List<int>();
-        for (int i = 1; i <4; i++)
-        {
-            int randomInt = new Random().Next(0, questions.Count());
-            while (indexes.Contains(randomInt))
-            {
-                randomInt = new Random().Next(0, questions.Count());
-            }
-            indexes.Add(randomInt);
-        }
 
-        foreach (int index in indexes)
+        for (int i = 0; i< 4; i++)
         {
-            Console.Write(questions[index]);
-            displaySpinner((userSessionLengthInput / indexes.Count()));
-            Console.WriteLine();
+
         }
-            
     }
-
-    
+}

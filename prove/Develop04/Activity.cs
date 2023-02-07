@@ -1,8 +1,9 @@
-using System.Diagnostics
+using System;
+using System.Diagnostics;
 
 class Activity
 {
-    private string startingMessage, endMessage, description, activityName;
+    private string startMessage, endMessage, description, activityName;
 
     static int spinnerCounter, UserSessionLengthInput = 0;
 
@@ -26,8 +27,8 @@ class Activity
     }
     public void displayStartMessage()
     {
-        startingMessage = string.Format("Welcome {0}.", activityName);
-        Console.WriteLine(startingMessage);
+        startMessage = string.Format("Welcome {0}.", activityName);
+        Console.WriteLine(startMessage);
         Console.WriteLine();
     }
     public void displayDescription()
@@ -38,15 +39,15 @@ class Activity
     
     public void displayEndMessage()
     {
-        endingMessage = string.Format("You have finished another {0} seconds of the {1}", UserSessionLengthInput, activityName);
+        endMessage = string.Format("You have finished another {0} seconds of the {1}", UserSessionLengthInput, activityName);
 
         Console.WriteLine();
         Console.WriteLine("Well done!");
         displaySpinner(3);
         Console.WriteLine();
-        Console.WriteLine(endingMessage);
+        Console.WriteLine(endMessage);
         Console.WriteLine();
-        displaySpinner(10);
+        displaySpinner(3);
     }
 
     public void Timer()
@@ -54,7 +55,7 @@ class Activity
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        while (stopwatch.ElapsedMilliseconds / 1000 <numSecondsToRun)
+        while (stopwatch.ElapsedMilliseconds / 1000)
         {
             spinnerCounter++;
             switch (spinnerCounter % 4)
@@ -70,22 +71,10 @@ class Activity
 
         Console.Write(" ");
     }
-    public void displayCountDown(int numSecondsToRun)
-    {
-        for (int i = numSecondsToRun; i >=1; i--)
-        {
-        Console.Write(string.Format("You may begin in:{0}", i));
-        Console.SetCursorPosition(0, Console.CursorTop);
-        Thread.Sleep(1000);
-        }
-        
-    }
-
     public void displayGetSessionLength()
     {
-        Console.Write("How long, in seconds, would you like for your session?");
+        Console.WriteLine("How long you would like your session would be /in seconds/");
         UserSessionLengthInput = int.Parse(Console.ReadLine());
-        
     }
 
     public void displayGetReady()
@@ -96,7 +85,7 @@ class Activity
 
     public void runActivityParentStart()
     {
-        displayStartingMessage();
+        displayStartMessage();
         displayDescription();
         displayGetSessionLength();
         displayGetReady();
@@ -104,6 +93,6 @@ class Activity
 
     public void runActivityParentEnd()
     {
-        displayEndingMessage();
+        displayEndMessage();
     }
 }
