@@ -43,7 +43,7 @@ class Activity
 
         Console.WriteLine();
         Console.WriteLine("Well done!");
-        displaySpinner(3);
+        displaySpinnerCounter(3);
         Console.WriteLine();
         Console.WriteLine(endMessage);
         Console.WriteLine();
@@ -94,5 +94,15 @@ class Activity
     public void runActivityParentEnd()
     {
         displayEndMessage();
+    }
+
+    public void displaySpinnerCounter()
+    {
+        List<int> indexes = new List<int>();
+
+        for (int i = 0; i< 4; i++)
+        {
+
+        }
     }
 }

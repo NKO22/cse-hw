@@ -80,7 +80,7 @@ List<string> prompt, questions;
         }
     }
 
-    public void displayQueries()
+    public void displayQuestions()
     {
         List<int> indexes = new List<int>();
 
