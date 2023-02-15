@@ -43,11 +43,10 @@ class Activity
 
         Console.WriteLine();
         Console.WriteLine("Well done!");
-        displaySpinnerCounter(3);
         Console.WriteLine();
         Console.WriteLine(endMessage);
         Console.WriteLine();
-        displaySpinner(3);
+        ;
     }
 
     public void Timer()
@@ -55,7 +54,7 @@ class Activity
         Stopwatch stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        while (stopwatch.ElapsedMilliseconds / 1000)
+        while (Stopwatch.ElapsedMilliseconds / 1000) 
         {
             spinnerCounter++;
             switch (spinnerCounter % 4)
@@ -80,7 +79,7 @@ class Activity
     public void displayGetReady()
     {
         Console.WriteLine("Get ready...");
-        displaySpinner(5);
+        
     }
 
     public void runActivityParentStart()
