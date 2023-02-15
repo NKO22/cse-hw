@@ -29,12 +29,12 @@ List<string> prompt, questions;
             "How can you keep this experience in mind in the future?"
         };
     }
-     private void setActivityName(string v)
+     private void setActivityName()
     {
         throw new NotImplementedException();
     }
 
-    private void setDescription(string v)
+    private void setDescription()
     {
         throw new NotImplementedException();
     }
@@ -49,7 +49,7 @@ List<string> prompt, questions;
         runActivityParentEnd();
     }
 
-    private void runActivityParentStart()
+    private void runDescription()
     {
         throw new NotImplementedException();
     }

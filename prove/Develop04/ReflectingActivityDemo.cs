@@ -41,7 +41,7 @@ int userSessionLengthInput;
         userSessionLengthInput = int.Parse(Console.ReadLine());
 
         Console.WriteLine("Get ready...");
-        displaySpinner(5);
+        
         Console.Clear();
         Console.WriteLine("Consider the following");
         Console.WriteLine();
@@ -54,7 +54,7 @@ int userSessionLengthInput;
         Console.ReadLine();
 
         Console.WriteLine("Now ponder on each of the following questions as they relate to this experience.");
-        displayCountDown(5);
+        
 
         Console.Clear();
         displayQuestions();
@@ -62,13 +62,13 @@ int userSessionLengthInput;
 
         Console.WriteLine();
         Console.WriteLine("Well done!!!");
-        displaySpinner(3);
+        
         Console.WriteLine();
 
         Console.WriteLine(string.Format("You have completed another {0} seconds of the {1}.",
             userSessionLengthInput, activityName));
         Console.WriteLine();
-        displaySpinner(3);
+        
         
     }
 
@@ -88,10 +88,11 @@ int userSessionLengthInput;
         foreach (int index in indexes)
         {
             Console.Write(questions[index]);
-            displaySpinner((userSessionLengthInput / indexes.Count()));
+            
             Console.WriteLine();
         }
             
     }
+}
 
     
