@@ -1,42 +1,29 @@
 using System;
-
-namespace Inheritance {
-
-  // base class
-  class Siblings { 
-
-    public string name;
-
-    public void display() {
-      Console.WriteLine("I am Orphee's brother");
+namespace MethodOverloading
+{
+    class Program
+    {
+        public void Add(int a, int b)
+        {
+            Console.WriteLine(a + b);
+        }
+        public void Add(float x, float y)
+        {
+            Console.WriteLine(x + y);
+        }
+        public void Add(string s1, string s2)
+        {
+            Console.WriteLine(s1 + " " + s2);
+        }
+        static void Main(string[] args)
+        {
+            Program obj = new Program();
+            obj.Add(100, 200);
+            obj.Add(100.5f, 30.5f);
+            obj.Add("Bobokoli", "Unikin");
+            Console.ReadKey();
+        }
     }
-    
-  } 
-  
-  // derived class of Animal 
-  class Men : Siblings {
-    
-    public void getName() {
-      Console.WriteLine("My name is " + name);
-    }
-  }
-
-  class Program {
-
-    static void Main(string[] args) {
-
-      // object of derived class
-      Men boy = new Men();
-
-      // access field and method of base class
-      boy.name = "Nelson";
-      boy.display();
-
-      // access method from own class
-      boy.getName();
-
-      Console.ReadLine();
-    }
-
-  }
 }
+
+ 

@@ -1,27 +1,46 @@
 using System;
-namespace MethodOverloading
+namespace InheritanceDemo
 {
-    class Program
+    public class Program
     {
-        public void Add(int a, int b)
+        static void Main()
         {
-            Console.WriteLine(a + b);
-        }
-        public void Add(float x, float y, float z)
-        {
-            Console.WriteLine(x + y+z);
-        }
-        public void Add(string s1, string s2, string s3)
-        {
-            Console.WriteLine(s1 + " " + s2+""+s3);
-        }
-        static void Main(string[] args)
-        {
-            Program obj = new Program();
-            obj.Add(15, 30, 45);
-            obj.Add(20.5f, 30.5f,40.5f);
-            obj.Add("computer", "bag","phone");
+            // Creating object of Child class and
+            // invoke the methods of Parent and Child classes
+            Cuboid obj =  new Cuboid(2, 6);
+            Console.WriteLine($"Volume is : {obj.Volume()}");
+            Console.WriteLine($"Area is : {obj.Area()}");
+            Console.WriteLine($"Perimeter is : {obj.Perimeter()}");
             Console.ReadKey();
+        }
+    }
+    //Parent class
+    public class Square
+    {
+        public int side;
+        
+        public int Area()
+        {
+            return side * side;
+        }
+        public int Perimeter()
+        {
+            return 2 * side;
+        }
+    }
+    
+    //Child Class
+    class Cuboid : Square
+    {
+        public int height;
+        public Cuboid(int s, int h)
+        {
+            side = s;
+            height = h;
+        }
+        public int Volume()
+        {
+            return side * side * height;
         }
     }
 }

@@ -1,7 +1,7 @@
 using System;
 namespace EncapsulationDemo
 {
-    public class Compte
+    public class account
     {
     
         private double balance;
@@ -22,7 +22,7 @@ namespace EncapsulationDemo
     {
         public static void Main()
         {
-            Compte mpsa = new Compte();
+            account mpsa = new account();
            
             mpsa.SetBalance(500);
             Console.WriteLine(mpsa.GetBalance());
